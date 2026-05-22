@@ -1,0 +1,308 @@
+{
+  "run_id": "run-1779481704230",
+  "job_index": 2,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 3,
+    "archetype": "calculator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Aide les collectivités et les gestionnaires d'espaces verts à quantifier et optimiser leur consommation d'eau…",
+    "notes": "Estimez les économies d'eau réalisables en adaptant les systèmes d'arrosage de parcs, jardins et terrains de sport municipaux français, selon les essences végétales et les conditions climat…\nCalcule les besoins hydriques théoriques versus pratiques pour proposer des stratégies d'économie d'eau concrètes pour les espaces verts.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "provider-space",
+    "provider_space_name": "Provider space",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "tool",
+      "calculator",
+      "generator"
+    ],
+    "forced_design_theme": "solarpunk-signal",
+    "forced_structure_preset": "precision-bento",
+    "site_idea_title": "Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics",
+    "site_idea_summary": "Estimez les économies d'eau réalisables en adaptant les systèmes d'arrosage de parcs, jardins et terrains de sport municipaux français, selon les essences végétales et les conditions climat…"
+  },
+  "site_spec": {
+    "slug": "calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf",
+    "theme": {
+      "name": "Solarpunk Signal",
+      "slug": "solarpunk-signal",
+      "eyebrow": "Bright Optimism",
+      "family": "solarpunk-signal",
+      "moods": [
+        "optimistic",
+        "green",
+        "smart",
+        "uplifting"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "eco tools",
+        "mobility",
+        "energy",
+        "wellness",
+        "consumer utility"
+      ],
+      "keywords": [
+        "solar",
+        "green",
+        "future",
+        "optimism",
+        "energy"
+      ],
+      "token_index": [
+        "bright",
+        "calculator",
+        "consumer",
+        "eco",
+        "energy",
+        "future",
+        "generator",
+        "green",
+        "mobility",
+        "optimism",
+        "optimistic",
+        "signal",
+        "smart",
+        "solar",
+        "solarpunk",
+        "tool",
+        "tools",
+        "uplifting",
+        "utility",
+        "wellness"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      "display_font": "\"Sora\", sans-serif",
+      "body_font": "\"Inter\", sans-serif",
+      "layout": "split",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "orbs",
+      "hero_template": "1.08fr 0.92fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 3,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "22px",
+      "palette": {
+        "bg": "linear-gradient(150deg, #052e16 0%, #15803d 38%, #fde68a 100%)",
+        "surface": "rgba(5, 46, 22, 0.72)",
+        "surface_border": "rgba(253,224,71,0.18)",
+        "text": "#f0fdf4",
+        "muted": "#d1fae5",
+        "accent": "#fde047",
+        "accent_alt": "#86efac",
+        "hero_glow": "rgba(253, 224, 71, 0.18)",
+        "button_text": "#2a2104",
+        "panel_alt": "rgba(255,255,255,0.05)",
+        "shadow": "0 28px 92px rgba(3, 18, 9, 0.34)",
+        "input_fill": "rgba(255,255,255,0.05)"
+      }
+    },
+    "structure": {
+      "name": "Precision Bento",
+      "slug": "precision-bento",
+      "hero_variant": "split",
+      "proof_variant": "metrics",
+      "section_order": [
+        "features",
+        "proof",
+        "seo",
+        "faq"
+      ],
+      "feature_columns": 4,
+      "faq_columns": 3,
+      "family": "precision-bento",
+      "moods": [
+        "clean",
+        "modular",
+        "premium"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "saas",
+        "admin",
+        "compliance",
+        "analysis"
+      ],
+      "keywords": [
+        "bento",
+        "precision",
+        "cards",
+        "operator"
+      ],
+      "token_index": [
+        "admin",
+        "analysis",
+        "bento",
+        "calculator",
+        "cards",
+        "clean",
+        "compliance",
+        "faq",
+        "features",
+        "generator",
+        "metrics",
+        "modular",
+        "operator",
+        "precision",
+        "premium",
+        "proof",
+        "saas",
+        "seo",
+        "split",
+        "tool"
+      ]
+    },
+    "render_direction": "campaign-slab",
+    "render_direction_name": "Campaign Slab",
+    "page_blueprint": "magazine-fold",
+    "page_blueprint_name": "Magazine Fold",
+    "title": "Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics",
+    "tagline": "Évaluez votre potentiel",
+    "description": "Estimez les économies d",
+    "feature_prefix": "Bloc",
+    "action": "Utiliser l'outil",
+    "cta_primary": "Calculer mes Économies",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "amount",
+        "label": "Montant de base",
+        "type": "number",
+        "placeholder": "7500",
+        "weight": 1.0
+      },
+      {
+        "id": "duration",
+        "label": "Durée estimée",
+        "type": "number",
+        "placeholder": "12",
+        "weight": 0.42
+      },
+      {
+        "id": "plan",
+        "label": "Niveau de service",
+        "type": "select",
+        "options": [
+          {
+            "label": "Essentiel",
+            "value": 1.0
+          },
+          {
+            "label": "Performance",
+            "value": 1.18
+          },
+          {
+            "label": "Premium",
+            "value": 1.34
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Campaign Slab",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Résultat recommandé",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Campaign Slab",
+      "Calculer mes Économies",
+      "Résultat recommandé",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Résultat recommandé",
+    "result_unit": "EUR",
+    "runtime_mode": "generic_calculator",
+    "page_variant": "showcase",
+    "faq_topic": "Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Calculateur de Potentiel d&#x27;Économie d&#x27;Eau pour Espaces Verts Publics | Évaluez votre potentiel</title>\n    <meta name=\"description\" content=\"Estimez les économies d\">\n    <style>\n        :root {\n            --green-primary: #34D399; /* Optimistic Green */\n            --green-secondary: #065F46;\n            --blue-primary: #60A5FA; /* Smart Blue */\n            --blue-secondary: #1E40AF;\n            --gray-light: #F3F4F6;\n            --gray-medium: #D1D5DB;\n            --gray-dark: #4B5563;\n            --font-family-headline: 'Inter', sans-serif;\n            --font-family-body: 'Roboto', sans-serif;\n        }\n\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@300;400;700&display=swap');\n\n        body {\n            font-family: var(--font-family-body);\n            margin: 0;\n            padding: 0;\n            background-color: #f0f4f8; /* Soft blue-gray background */\n            color: var(--gray-dark);\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            min-height: 100vh;\n        }\n\n        header {\n            background: linear-gradient(135deg, var(--green-primary) 0%, var(--blue-primary) 100%);\n            color: white;\n            padding: 2rem 1rem;\n            text-align: center;\n            position: relative;\n            overflow: hidden;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 20px;\n        }\n\n        header::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            left: -50%;\n            width: 200%;\n            height: 200%;\n            background: rgba(255, 255, 255, 0.1);\n            transform: rotate(30deg);\n            z-index: 0;\n        }\n\n        h1 {\n            font-family: var(--font-family-headline);\n            font-size: 2.8rem;\n            margin-bottom: 0.5rem;\n            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n            position: relative;\n            z-index: 1;\n            letter-spacing: -0.05em;\n            text-transform: uppercase;\n        }\n\n        header p {\n            font-size: 1.2rem;\n            max-width: 800px;\n            margin: 0 auto;\n            position: relative;\n            z-index: 1;\n            font-weight: 300;\n        }\n\n        .container {\n            flex-grow: 1;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 2rem;\n            padding: 2rem 1rem;\n            max-width: 1200px;\n            margin: 0 auto;\n        }\n\n        .tool-rail {\n            flex: 1 1 350px;\n            background-color: white;\n            padding: 2rem;\n            border-radius: 15px;\n            box-shadow: 0 10px 30px rgba(0,0,0,0.1);\n            backdrop-filter: blur(10px);\n            background: rgba(255, 255, 255, 0.7);\n            border: 1px solid rgba(255, 255, 255, 0.3);\n            display: flex;\n            flex-direction: column;\n        }\n\n        .statement-block {\n            flex: 2 1 600px;\n            background-color: white;\n            padding: 2rem;\n            border-radius: 15px;\n            box-shadow: 0 10px 30px rgba(0,0,0,0.1);\n            backdrop-filter: blur(10px);\n            background: rgba(255, 255, 255, 0.7);\n            border: 1px solid rgba(255, 255, 255, 0.3);\n        }\n\n        h2 {\n            font-family: var(--font-family-headline);\n            font-size: 2rem;\n            color: var(--green-secondary);\n            margin-bottom: 1.5rem;\n            letter-spacing: -0.03em;\n        }\n\n        form label {\n            display: block;\n            margin-bottom: 0.5rem;\n            color: var(--gray-dark);\n            font-weight: 700;\n            font-size: 0.95rem;\n        }\n\n        form input[type=\"number\"],\n        form select {\n            width: calc(100% - 20px);\n            padding: 0.75rem;\n            margin-bottom: 1.5rem;\n            border: 1px solid var(--gray-medium);\n            border-radius: 8px;\n            font-size: 1rem;\n            background-color: var(--gray-light);\n            transition: border-color 0.3s ease;\n        }\n\n        form input[type=\"number\"]:focus,\n        form select:focus {\n            outline: none;\n            border-color: var(--blue-primary);\n            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);\n        }\n\n        button#tool-submit {\n            background-color: var(--green-primary);\n            color: white;\n            padding: 1rem 1.5rem;\n            border: none;\n            border-radius: 8px;\n            font-size: 1.1rem;\n            font-weight: 700;\n            cursor: pointer;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n            width: 100%;\n        }\n\n        button#tool-submit:hover {\n            background-color: var(--green-secondary);\n            transform: translateY(-2px);\n        }\n\n        .result-area {\n            margin-top: 2rem;\n            padding: 1.5rem;\n            background-color: var(--gray-light);\n            border-radius: 10px;\n            border: 1px dashed var(--blue-primary);\n            color: var(--gray-dark);\n            display: none; /* Hidden by default */\n            font-size: 1.1rem;\n            line-height: 1.8;\n            font-weight: 400;\n        }\n\n        .result-area p {\n            margin: 0 0 0.8rem 0;\n        }\n\n        .result-area strong {\n            color: var(--blue-secondary);\n            font-weight: 700;\n        }\n\n        .result-area .highlight {\n            color: var(--green-secondary);\n            font-size: 1.3rem;\n            font-weight: 700;\n        }\n\n        .kpi-fragments {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n            gap: 1rem;\n            margin-top: 1.5rem;\n        }\n\n        .kpi-fragment {\n            background-color: var(--gray-light);\n            padding: 1rem;\n            border-radius: 8px;\n            text-align: center;\n            border: 1px solid var(--gray-medium);\n        }\n\n        .kpi-fragment .value {\n            font-family: var(--font-family-headline);\n            font-size: 2.2rem;\n            font-weight: 900;\n            color: var(--blue-secondary);\n            line-height: 1;\n            margin-bottom: 0.5rem;\n        }\n\n        .kpi-fragment .label {\n            font-size: 0.9rem;\n            color: var(--gray-dark);\n        }\n\n        .evidence-chips {\n            margin-top: 2rem;\n            display: flex;\n            flex-wrap: wrap;\n            gap: 0.75rem;\n        }\n\n        .chip {\n            background-color: var(--blue-primary);\n            color: white;\n            padding: 0.5rem 1rem;\n            border-radius: 20px;\n            font-size: 0.85rem;\n            font-weight: 700;\n            display: inline-flex;\n            align-items: center;\n            gap: 0.5rem;\n        }\n\n        .chip-icon {\n            font-size: 1.1em;\n        }\n\n        .next-steps {\n            margin-top: 2rem;\n            display: flex;\n            flex-direction: column;\n            gap: 1rem;\n        }\n\n        .next-steps button {\n            background-color: var(--blue-primary);\n            color: white;\n            padding: 0.8rem 1.2rem;\n            border: none;\n            border-radius: 8px;\n            font-size: 1rem;\n            font-weight: 700;\n            cursor: pointer;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n        }\n\n        .next-steps button:hover {\n            background-color: var(--blue-secondary);\n            transform: translateY(-2px);\n        }\n\n        .seo-section {\n            background-color: var(--gray-light);\n            padding: 2rem 1rem;\n            text-align: center;\n            margin-top: 3rem;\n            border-top: 1px solid var(--gray-medium);\n        }\n\n        .seo-section h3 {\n            font-family: var(--font-family-headline);\n            font-size: 1.8rem;\n            color: var(--green-secondary);\n            margin-bottom: 1.5rem;\n        }\n\n        .seo-section p {\n            max-width: 900px;\n            margin: 0 auto 1rem auto;\n            color: var(--gray-dark);\n        }\n\n        .seo-section a {\n            color: var(--blue-secondary);\n            text-decoration: none;\n            font-weight: 700;\n        }\n\n        .seo-section a:hover {\n            text-decoration: underline;\n        }\n\n        footer {\n            text-align: center;\n            padding: 1.5rem;\n            background-color: var(--gray-dark);\n            color: white;\n            font-size: 0.9rem;\n            margin-top: auto;\n        }\n\n        @media (max-width: 768px) {\n            h1 {\n                font-size: 2rem;\n            }\n            header p {\n                font-size: 1rem;\n            }\n            .container {\n                flex-direction: column;\n            }\n            .tool-rail, .statement-block {\n                flex: none;\n                width: 100%;\n            }\n            .kpi-fragments {\n                grid-template-columns: 1fr;\n            }\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com\">\n    <meta property=\"og:title\" content=\"Calculateur de Potentiel d&#x27;Économie d&#x27;Eau pour Espaces Verts Publics\">\n    <meta property=\"og:description\" content=\"Estimez les économies d\">\n    <meta property=\"og:url\" content=\"https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics\", \"description\": \"Estimez les économies d\", \"url\": \"https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf\" data-runtime-mode=\"generic_calculator\">\n    <header>\n        <h1>Calculateur d'Économies d'Eau pour Espaces Verts Publics</h1>\n        <p>Estimez les économies potentielles en adaptant l'arrosage de vos parcs, jardins et terrains de sport municipaux en France. Un outil essentiel pour une gestion durable de l'eau.</p>\n    </header>\n\n    <div class=\"container\">\n        <div class=\"tool-rail\">\n            <h2>Évaluez votre potentiel</h2>\n            <form id=\"tool-form\">\n                <label for=\"surface\">Surface totale des espaces verts (m²)</label>\n                <input type=\"number\" id=\"surface\" name=\"surface\" min=\"1\" value=\"10000\" required>\n\n                <label for=\"vegetation\">Type de végétation dominante</label>\n                <select id=\"vegetation\" name=\"vegetation\" required>\n                    <option value=\"gazon_traditionnel\">Gazon traditionnel / Ornemental</option>\n                    <option value=\"gazon_sportif\">Gazon sportif (stades, terrains)</option>\n                    <option value=\"massifs_floraux\">Massifs floraux annuels</option>\n                    <option value=\"arbustes_rustiques\">Arbustes et plantes vivaces rustiques</option>\n                    <option value=\"xeroscaping\">Végétation méditerranéenne / Xéropaysagisme</option>\n                </select>\n\n                <label for=\"systeme_actuel\">Système d'arrosage actuel</label>\n                <select id=\"systeme_actuel\" name=\"systeme_actuel\" required>\n                    <option value=\"aspersion_traditionnelle\">Aspersion traditionnelle (peu optimisée)</option>\n                    <option value=\"aspersion_optimisee\">Aspersion optimisée (programmateur, pluviomètre)</option>\n                    <option value=\"goutte_a_goutte\">Goutte-à-goutte / Micro-irrigation</option>\n                    <option value=\"manuel\">Arrosage manuel</option>\n                </select>\n\n                <label for=\"region_climatique\">Région climatique française</label>\n                <select id=\"region_climatique\" name=\"region_climatique\" required>\n                    <option value=\"nord_ouest\">Nord-Ouest (Océanique)</option>\n                    <option value=\"nord_est\">Nord-Est (Semi-continental)</option>\n                    <option value=\"centre_ouest\">Centre-Ouest (Océanique altéré)</option>\n                    <option value=\"sud_ouest\">Sud-Ouest (Océanique / Aquitain)</option>\n                    <option value=\"sud_est\">Sud-Est (Méditerranéen)</option>\n                    <option value=\"alpin\">Massif Alpin</option>\n                    <option value=\"massif_central\">Massif Central</option>\n                </select>\n\n                <button type=\"submit\" id=\"tool-submit\">Calculer mes Économies</button>\n            </form>\n\n            <div id=\"tool-result\" class=\"result-area\">\n                <h3 id=\"result-headline\">Votre potentiel d'économie :</h3>\n                <p>En adaptant vos pratiques, vous pourriez économiser jusqu'à <span class=\"highlight\" id=\"economie-annuelle-litres\">X</span> litres d'eau par an, soit environ <span class=\"highlight\" id=\"economie-annuelle-euros\">Y</span> €.</p>\n                <p>Cela représente une réduction de <strong><span id=\"economie-pourcentage\">Z</span>%</strong> de votre consommation actuelle.</p>\n                <div class=\"kpi-fragments\">\n                    <div class=\"kpi-fragment\">\n                        <div class=\"value\" id=\"kpi-vol\">0</div>\n                        <div class=\"label\">m³ d'eau économisés / an</div>\n                    </div>\n                    <div class=\"kpi-fragment\">\n                        <div class=\"value\" id=\"kpi-eur\">0</div>\n                        <div class=\"label\">€ de budget préservés / an</div>\n                    </div>\n                    <div class=\"kpi-fragment\">\n                        <div class=\"value\" id=\"kpi-reduc\">0%</div>\n                        <div class=\"label\">Réduction de la consommation</div>\n                    </div>\n                </div>\n                <div class=\"next-steps\">\n                    <button data-affiliate-slot=\"audit_gratuit\">Demander un Audit Gratuit</button>\n                    <button data-affiliate-slot=\"solutions_irrigation\">Découvrir nos Solutions d'Irrigation</button>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"statement-block\">\n            <h2>Pourquoi optimiser l'arrosage public ?</h2>\n            <p>La gestion de l'eau est un enjeu majeur pour les collectivités territoriales. Face aux épisodes de sécheresse récurrents et à la pression sur les ressources, optimiser l'arrosage des espaces verts publics n'est plus une option, mais une nécessité. Notre calculateur vous offre une première estimation concrète des gains possibles, basée sur des paramètres clés comme la surface, le type de végétation, le système d'irrigation actuel et la spécificité climatique de votre région.</p>\n            <p>En comprenant mieux les besoins hydriques réels de vos parcs, jardins, et terrains de sport, vous pouvez non seulement réaliser des économies significatives sur votre budget, mais aussi contribuer activement à la préservation de l'environnement et à la résilience de votre territoire face au changement climatique. C'est un investissement pour l'avenir de votre commune et le bien-être de ses habitants.</p>\n            <h3>Nos engagements pour une gestion de l'eau responsable :</h3>\n            <div class=\"evidence-chips\">\n                <span class=\"chip\"><span class=\"chip-icon\">💧</span> Maîtrise des coûts</span>\n                <span class=\"chip\"><span class=\"chip-icon\">🌳</span> Préservation de la biodiversité</span>\n                <span class=\"chip\"><span class=\"chip-icon\">☀️</span> Adaptation climatique</span>\n                <span class=\"chip\"><span class=\"chip-icon\">📊</span> Données précises</span>\n                <span class=\"chip\"><span class=\"chip-icon\">🇫🇷</span> Solutions locales</span>\n            </div>\n        </div>\n    </div>\n\n    <section class=\"seo-section\">\n        <h3>Optimisez la gestion de l'eau de vos espaces verts en France</h3>\n        <p>Que vous soyez une <a href=\"#\">collectivité territoriale</a>, un <a href=\"#\">gestionnaire d'espaces verts</a> ou un responsable d'infrastructure sportive, la question de l'économie d'eau est au cœur de vos préoccupations. Notre outil vous aide à estimer précisément le <a href=\"#\">potentiel d'économie d'eau</a> pour vos parcs, jardins publics, ronds-points et terrains de sport. Calculez les <a href=\"#\">besoins hydriques</a> de votre gazon, massifs floraux ou arbustes rustiques selon la <a href=\"#\">météo locale</a> et le <a href=\"#\">climat français</a>.</p>\n        <p>Découvrez comment une <a href=\"#\">gestion optimisée de l'arrosage</a> peut réduire drastiquement votre <a href=\"#\">consommation d'eau municipale</a> et votre <a href=\"#\">facture d'eau</a>. Notre calculateur prend en compte les spécificités régionales (Méditerranée, Atlantique, Continental) pour des résultats pertinents et des <a href=\"#\">stratégies d'économie d'eau</a> concrètes. Mettez en place un <a href=\"#\">plan d'économie d'eau</a> durable et contribuez à la <a href=\"#\">préservation des ressources en eau</a> de votre commune.</p>\n        <p>Cet outil est parfait pour les <a href=\"#\">mairies</a>, les <a href=\"#\">services techniques municipaux</a> et toute entité souhaitant une <a href=\"#\">gestion écologique des espaces verts</a> et une <a href=\"#\">réduction de l'empreinte environnementale</a>.</p>\n    </section>\n\n    <footer>\n        © 2023 Solutions Hydro-Durables. Tous droits réservés.\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const surface = parseFloat(document.getElementById('surface').value);\n            const vegetation = document.getElementById('vegetation').value;\n            const systemeActuel = document.getElementById('systeme_actuel').value;\n            const regionClimatique = document.getElementById('region_climatique').value;\n\n            // Base Consommation (litres/m²/jour) - valeurs indicatives pour l'été en France\n            let baseConso = 0;\n            switch (vegetation) {\n                case 'gazon_traditionnel': baseConso = 6; break;\n                case 'gazon_sportif': baseConso = 8; break;\n                case 'massifs_floraux': baseConso = 7; break;\n                case 'arbustes_rustiques': baseConso = 3; break;\n                case 'xeroscaping': baseConso = 2; break;\n            }\n\n            // Facteur d'efficacité du système actuel (plus c'est bas, moins c'est efficace)\n            let efficaciteSysteme = 1;\n            switch (systemeActuel) {\n                case 'aspersion_traditionnelle': efficaciteSysteme = 0.6; break; // 40% de pertes\n                case 'aspersion_optimisee': efficaciteSysteme = 0.75; break; // 25% de pertes\n                case 'goutte_a_goutte': efficaciteSysteme = 0.9; break; // 10% de pertes\n                case 'manuel': efficaciteSysteme = 0.5; break; // Grande variabilité, beaucoup de pertes\n            }\n\n            // Facteur climatique (impact sur le besoin théorique)\n            let facteurClimatique = 1;\n            switch (regionClimatique) {\n                case 'nord_ouest': facteurClimatique = 0.9; break;\n                case 'nord_est': facteurClimatique = 1; break;\n                case 'centre_ouest': facteurClimatique = 0.95; break;\n                case 'sud_ouest': facteurClimatique = 1.1; break;\n                case 'sud_est': facteurClimatique = 1.2; break; // Région plus sèche\n                case 'alpin': facteurClimatique = 0.8; break;\n                case 'massif_central': facteurClimatique = 1; break;\n            }\n\n            // Consommation actuelle estimée (L/jour)\n            const consoActuelleLJour = surface * baseConso * facteurClimatique / efficaciteSysteme;\n            // Consommation annuelle estimée (L/an, en supposant 180 jours d'arrosage actif par an)\n            const consoActuelleLAn = consoActuelleLJour * 180;\n\n            // Potentiel d'économie : on vise une efficacité de 90% (goutte-à-goutte optimisé)\n            const consoOptimaleLJour = surface * baseConso * facteurClimatique / 0.9;\n            const consoOptimaleLAn = consoOptimaleLJour * 180;\n\n            const economieLAn = Math.max(0, consoActuelleLAn - consoOptimaleLAn);\n            const economieM3An = economieLAn / 1000;\n            const prixM3Eau = 4; // €/m3 en France (prix moyen tout compris, variable)\n            const economieEurosAn = economieM3An * prixM3Eau;\n\n            const economiePourcentage = consoActuelleLAn > 0 ? ((economieLAn / consoActuelleLAn) * 100) : 0;\n\n            document.getElementById('economie-annuelle-litres').textContent = Math.round(economieLAn).toLocaleString('fr-FR');\n            document.getElementById('economie-annuelle-euros').textContent = Math.round(economieEurosAn).toLocaleString('fr-FR');\n            document.getElementById('economie-pourcentage').textContent = economiePourcentage.toFixed(0);\n\n            document.getElementById('kpi-vol').textContent = Math.round(economieM3An).toLocaleString('fr-FR');\n            document.getElementById('kpi-eur').textContent = Math.round(economieEurosAn).toLocaleString('fr-FR');\n            document.getElementById('kpi-reduc').textContent = economiePourcentage.toFixed(0) + '%';\n\n            document.getElementById('tool-result').style.display = 'block';\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
