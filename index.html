@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Potentiel d&#x27;Économie d&#x27;Eau pour Espaces Verts Publics | Évaluez votre potentiel</title>
+    <meta name="description" content="Estimez les économies d">
+    <style>
+        :root {
+            --green-primary: #34D399; /* Optimistic Green */
+            --green-secondary: #065F46;
+            --blue-primary: #60A5FA; /* Smart Blue */
+            --blue-secondary: #1E40AF;
+            --gray-light: #F3F4F6;
+            --gray-medium: #D1D5DB;
+            --gray-dark: #4B5563;
+            --font-family-headline: 'Inter', sans-serif;
+            --font-family-body: 'Roboto', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: var(--font-family-body);
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Soft blue-gray background */
+            color: var(--gray-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--blue-primary) 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+
+        h1 {
+            font-family: var(--font-family-headline);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-rail {
+            flex: 1 1 350px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .statement-block {
+            flex: 2 1 600px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            font-family: var(--font-family-headline);
+            font-size: 2rem;
+            color: var(--green-secondary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gray-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        form input[type="number"],
+        form select {
+            width: calc(100% - 20px);
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: var(--gray-light);
+            transition: border-color 0.3s ease;
+        }
+
+        form input[type="number"]:focus,
+        form select:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+        }
+
+        button#tool-submit {
+            background-color: var(--green-primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        button#tool-submit:hover {
+            background-color: var(--green-secondary);
+            transform: translateY(-2px);
+        }
+
+        .result-area {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            border: 1px dashed var(--blue-primary);
+            color: var(--gray-dark);
+            display: none; /* Hidden by default */
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .result-area p {
+            margin: 0 0 0.8rem 0;
+        }
+
+        .result-area strong {
+            color: var(--blue-secondary);
+            font-weight: 700;
+        }
+
+        .result-area .highlight {
+            color: var(--green-secondary);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .kpi-fragments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .kpi-fragment {
+            background-color: var(--gray-light);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .kpi-fragment .value {
+            font-family: var(--font-family-headline);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--blue-secondary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-fragment .label {
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+        }
+
+        .evidence-chips {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip {
+            background-color: var(--blue-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chip-icon {
+            font-size: 1.1em;
+        }
+
+        .next-steps {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .next-steps button {
+            background-color: var(--blue-primary);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .next-steps button:hover {
+            background-color: var(--blue-secondary);
+            transform: translateY(-2px);
+        }
+
+        .seo-section {
+            background-color: var(--gray-light);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .seo-section h3 {
+            font-family: var(--font-family-headline);
+            font-size: 1.8rem;
+            color: var(--green-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .seo-section p {
+            max-width: 900px;
+            margin: 0 auto 1rem auto;
+            color: var(--gray-dark);
+        }
+
+        .seo-section a {
+            color: var(--blue-secondary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .seo-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--gray-dark);
+            color: white;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .tool-rail, .statement-block {
+                flex: none;
+                width: 100%;
+            }
+            .kpi-fragments {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com">
+    <meta property="og:title" content="Calculateur de Potentiel d&#x27;Économie d&#x27;Eau pour Espaces Verts Publics">
+    <meta property="og:description" content="Estimez les économies d">
+    <meta property="og:url" content="https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur de Potentiel d'Économie d'Eau pour Espaces Verts Publics", "description": "Estimez les économies d", "url": "https://calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="calculateur-de-potentiel-d-economie-d-eau-pour-1bba99cf" data-runtime-mode="generic_calculator">
+    <header>
+        <h1>Calculateur d'Économies d'Eau pour Espaces Verts Publics</h1>
+        <p>Estimez les économies potentielles en adaptant l'arrosage de vos parcs, jardins et terrains de sport municipaux en France. Un outil essentiel pour une gestion durable de l'eau.</p>
+    </header>
+
+    <div class="container">
+        <div class="tool-rail">
+            <h2>Évaluez votre potentiel</h2>
+            <form id="tool-form">
+                <label for="surface">Surface totale des espaces verts (m²)</label>
+                <input type="number" id="surface" name="surface" min="1" value="10000" required>
+
+                <label for="vegetation">Type de végétation dominante</label>
+                <select id="vegetation" name="vegetation" required>
+                    <option value="gazon_traditionnel">Gazon traditionnel / Ornemental</option>
+                    <option value="gazon_sportif">Gazon sportif (stades, terrains)</option>
+                    <option value="massifs_floraux">Massifs floraux annuels</option>
+                    <option value="arbustes_rustiques">Arbustes et plantes vivaces rustiques</option>
+                    <option value="xeroscaping">Végétation méditerranéenne / Xéropaysagisme</option>
+                </select>
+
+                <label for="systeme_actuel">Système d'arrosage actuel</label>
+                <select id="systeme_actuel" name="systeme_actuel" required>
+                    <option value="aspersion_traditionnelle">Aspersion traditionnelle (peu optimisée)</option>
+                    <option value="aspersion_optimisee">Aspersion optimisée (programmateur, pluviomètre)</option>
+                    <option value="goutte_a_goutte">Goutte-à-goutte / Micro-irrigation</option>
+                    <option value="manuel">Arrosage manuel</option>
+                </select>
+
+                <label for="region_climatique">Région climatique française</label>
+                <select id="region_climatique" name="region_climatique" required>
+                    <option value="nord_ouest">Nord-Ouest (Océanique)</option>
+                    <option value="nord_est">Nord-Est (Semi-continental)</option>
+                    <option value="centre_ouest">Centre-Ouest (Océanique altéré)</option>
+                    <option value="sud_ouest">Sud-Ouest (Océanique / Aquitain)</option>
+                    <option value="sud_est">Sud-Est (Méditerranéen)</option>
+                    <option value="alpin">Massif Alpin</option>
+                    <option value="massif_central">Massif Central</option>
+                </select>
+
+                <button type="submit" id="tool-submit">Calculer mes Économies</button>
+            </form>
+
+            <div id="tool-result" class="result-area">
+                <h3 id="result-headline">Votre potentiel d'économie :</h3>
+                <p>En adaptant vos pratiques, vous pourriez économiser jusqu'à <span class="highlight" id="economie-annuelle-litres">X</span> litres d'eau par an, soit environ <span class="highlight" id="economie-annuelle-euros">Y</span> €.</p>
+                <p>Cela représente une réduction de <strong><span id="economie-pourcentage">Z</span>%</strong> de votre consommation actuelle.</p>
+                <div class="kpi-fragments">
+                    <div class="kpi-fragment">
+                        <div class="value" id="kpi-vol">0</div>
+                        <div class="label">m³ d'eau économisés / an</div>
+                    </div>
+                    <div class="kpi-fragment">
+                        <div class="value" id="kpi-eur">0</div>
+                        <div class="label">€ de budget préservés / an</div>
+                    </div>
+                    <div class="kpi-fragment">
+                        <div class="value" id="kpi-reduc">0%</div>
+                        <div class="label">Réduction de la consommation</div>
+                    </div>
+                </div>
+                <div class="next-steps">
+                    <button data-affiliate-slot="audit_gratuit">Demander un Audit Gratuit</button>
+                    <button data-affiliate-slot="solutions_irrigation">Découvrir nos Solutions d'Irrigation</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="statement-block">
+            <h2>Pourquoi optimiser l'arrosage public ?</h2>
+            <p>La gestion de l'eau est un enjeu majeur pour les collectivités territoriales. Face aux épisodes de sécheresse récurrents et à la pression sur les ressources, optimiser l'arrosage des espaces verts publics n'est plus une option, mais une nécessité. Notre calculateur vous offre une première estimation concrète des gains possibles, basée sur des paramètres clés comme la surface, le type de végétation, le système d'irrigation actuel et la spécificité climatique de votre région.</p>
+            <p>En comprenant mieux les besoins hydriques réels de vos parcs, jardins, et terrains de sport, vous pouvez non seulement réaliser des économies significatives sur votre budget, mais aussi contribuer activement à la préservation de l'environnement et à la résilience de votre territoire face au changement climatique. C'est un investissement pour l'avenir de votre commune et le bien-être de ses habitants.</p>
+            <h3>Nos engagements pour une gestion de l'eau responsable :</h3>
+            <div class="evidence-chips">
+                <span class="chip"><span class="chip-icon">💧</span> Maîtrise des coûts</span>
+                <span class="chip"><span class="chip-icon">🌳</span> Préservation de la biodiversité</span>
+                <span class="chip"><span class="chip-icon">☀️</span> Adaptation climatique</span>
+                <span class="chip"><span class="chip-icon">📊</span> Données précises</span>
+                <span class="chip"><span class="chip-icon">🇫🇷</span> Solutions locales</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="seo-section">
+        <h3>Optimisez la gestion de l'eau de vos espaces verts en France</h3>
+        <p>Que vous soyez une <a href="#">collectivité territoriale</a>, un <a href="#">gestionnaire d'espaces verts</a> ou un responsable d'infrastructure sportive, la question de l'économie d'eau est au cœur de vos préoccupations. Notre outil vous aide à estimer précisément le <a href="#">potentiel d'économie d'eau</a> pour vos parcs, jardins publics, ronds-points et terrains de sport. Calculez les <a href="#">besoins hydriques</a> de votre gazon, massifs floraux ou arbustes rustiques selon la <a href="#">météo locale</a> et le <a href="#">climat français</a>.</p>
+        <p>Découvrez comment une <a href="#">gestion optimisée de l'arrosage</a> peut réduire drastiquement votre <a href="#">consommation d'eau municipale</a> et votre <a href="#">facture d'eau</a>. Notre calculateur prend en compte les spécificités régionales (Méditerranée, Atlantique, Continental) pour des résultats pertinents et des <a href="#">stratégies d'économie d'eau</a> concrètes. Mettez en place un <a href="#">plan d'économie d'eau</a> durable et contribuez à la <a href="#">préservation des ressources en eau</a> de votre commune.</p>
+        <p>Cet outil est parfait pour les <a href="#">mairies</a>, les <a href="#">services techniques municipaux</a> et toute entité souhaitant une <a href="#">gestion écologique des espaces verts</a> et une <a href="#">réduction de l'empreinte environnementale</a>.</p>
+    </section>
+
+    <footer>
+        © 2023 Solutions Hydro-Durables. Tous droits réservés.
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const surface = parseFloat(document.getElementById('surface').value);
+            const vegetation = document.getElementById('vegetation').value;
+            const systemeActuel = document.getElementById('systeme_actuel').value;
+            const regionClimatique = document.getElementById('region_climatique').value;
+
+            // Base Consommation (litres/m²/jour) - valeurs indicatives pour l'été en France
+            let baseConso = 0;
+            switch (vegetation) {
+                case 'gazon_traditionnel': baseConso = 6; break;
+                case 'gazon_sportif': baseConso = 8; break;
+                case 'massifs_floraux': baseConso = 7; break;
+                case 'arbustes_rustiques': baseConso = 3; break;
+                case 'xeroscaping': baseConso = 2; break;
+            }
+
+            // Facteur d'efficacité du système actuel (plus c'est bas, moins c'est efficace)
+            let efficaciteSysteme = 1;
+            switch (systemeActuel) {
+                case 'aspersion_traditionnelle': efficaciteSysteme = 0.6; break; // 40% de pertes
+                case 'aspersion_optimisee': efficaciteSysteme = 0.75; break; // 25% de pertes
+                case 'goutte_a_goutte': efficaciteSysteme = 0.9; break; // 10% de pertes
+                case 'manuel': efficaciteSysteme = 0.5; break; // Grande variabilité, beaucoup de pertes
+            }
+
+            // Facteur climatique (impact sur le besoin théorique)
+            let facteurClimatique = 1;
+            switch (regionClimatique) {
+                case 'nord_ouest': facteurClimatique = 0.9; break;
+                case 'nord_est': facteurClimatique = 1; break;
+                case 'centre_ouest': facteurClimatique = 0.95; break;
+                case 'sud_ouest': facteurClimatique = 1.1; break;
+                case 'sud_est': facteurClimatique = 1.2; break; // Région plus sèche
+                case 'alpin': facteurClimatique = 0.8; break;
+                case 'massif_central': facteurClimatique = 1; break;
+            }
+
+            // Consommation actuelle estimée (L/jour)
+            const consoActuelleLJour = surface * baseConso * facteurClimatique / efficaciteSysteme;
+            // Consommation annuelle estimée (L/an, en supposant 180 jours d'arrosage actif par an)
+            const consoActuelleLAn = consoActuelleLJour * 180;
+
+            // Potentiel d'économie : on vise une efficacité de 90% (goutte-à-goutte optimisé)
+            const consoOptimaleLJour = surface * baseConso * facteurClimatique / 0.9;
+            const consoOptimaleLAn = consoOptimaleLJour * 180;
+
+            const economieLAn = Math.max(0, consoActuelleLAn - consoOptimaleLAn);
+            const economieM3An = economieLAn / 1000;
+            const prixM3Eau = 4; // €/m3 en France (prix moyen tout compris, variable)
+            const economieEurosAn = economieM3An * prixM3Eau;
+
+            const economiePourcentage = consoActuelleLAn > 0 ? ((economieLAn / consoActuelleLAn) * 100) : 0;
+
+            document.getElementById('economie-annuelle-litres').textContent = Math.round(economieLAn).toLocaleString('fr-FR');
+            document.getElementById('economie-annuelle-euros').textContent = Math.round(economieEurosAn).toLocaleString('fr-FR');
+            document.getElementById('economie-pourcentage').textContent = economiePourcentage.toFixed(0);
+
+            document.getElementById('kpi-vol').textContent = Math.round(economieM3An).toLocaleString('fr-FR');
+            document.getElementById('kpi-eur').textContent = Math.round(economieEurosAn).toLocaleString('fr-FR');
+            document.getElementById('kpi-reduc').textContent = economiePourcentage.toFixed(0) + '%';
+
+            document.getElementById('tool-result').style.display = 'block';
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
